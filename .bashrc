@@ -110,3 +110,11 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+. ~/.bash.d/completion/git-completion.bash
+complete -C ~/.bash.d/completion/rake-completion.rb -o default rake
+
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
