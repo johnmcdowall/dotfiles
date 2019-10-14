@@ -114,7 +114,9 @@ fi
 . ~/.bash.d/completion/git-completion.bash
 complete -C ~/.bash.d/completion/rake-completion.rb -o default rake
 
-
 . $HOME/.asdf/asdf.sh
-
 . $HOME/.asdf/completions/asdf.bash
+
+if [ -t 1 ]; then
+  exec zsh
+fi
