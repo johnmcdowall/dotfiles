@@ -120,3 +120,5 @@ complete -C ~/.bash.d/completion/rake-completion.rb -o default rake
 if [ -t 1 ]; then
   exec zsh
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
