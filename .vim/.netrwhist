@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/jmd/code/signalwire/prime-rails/app/concepts/app/address/operations'
+let g:netrw_dirhist_3='/home/jmd/code/signalwire/prime-rails/app/concepts/app/address'
+let g:netrw_dirhist_2='/home/jmd/code/signalwire/prime-rails/app/concepts/app'
+let g:netrw_dirhist_1='/home/jmd/code/signalwire/prime-rails/app/concepts'
