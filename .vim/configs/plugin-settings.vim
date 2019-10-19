@@ -11,6 +11,22 @@
 colorscheme nord
 
 """""""""""""""
+" Supertab    "
+"""""""""""""""
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+"""""""""""""""
+" Deoplete    "
+"""""""""""""""
+let g:deoplete#enable_at_startup = 1
+
+" Language server
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['~/.asdf/shims/solargraph', 'stdio'],
+    \ }
+
+
+"""""""""""""""
 " Git Gutter  "
 """""""""""""""
 let g:gitgutter_enabled = 1
@@ -207,25 +223,9 @@ hi! PmenuSel ctermbg=0
 " Brighter line numbers
 hi! LineNr ctermfg=NONE guibg=NONE
 
-" KEY REMAPS ""
-set updatetime=300
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
-
 augroup MyAutoCmd
   autocmd!
 augroup end
-
-" map <tab> to trigger completion and navigate to the next item
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" 
-
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 """""""""""""""""
 "Nerd Commenter "
@@ -289,3 +289,5 @@ augroup END
 " Fix visual selection
 set background=dark
 highlight Visual ctermbg=Blue ctermfg=White
+highlight ALEError ctermbg=none cterm=underline
+highlight ALEWarning ctermbg=none cterm=underline

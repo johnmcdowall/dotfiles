@@ -41,3 +41,11 @@ _load_settings "$HOME/.zsh/configs"
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fpath=($fpath "/home/jmd/.zfunctions")
+
+source ~/.zshcustom/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+
