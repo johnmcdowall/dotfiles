@@ -31,3 +31,4 @@ code/**
 .yarnrc
 .config/gcloud
 .tool-versions
+.vim/.netrwhist
