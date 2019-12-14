@@ -81,10 +81,10 @@ set showmatch
 set backupskip=/tmp/*,/private/tmp/*"
 
 " Store backup files in one place.
-set backupdir^=$HOME/.config/nvim//storage/backups//
+set backupdir^=$HOME/.config/nvim/storage/backups/
 
 " Store swap files in one place.
-set dir^=$HOME/.config/nvim//storage/swaps//
+set dir^=$HOME/.config/nvim/storage/swaps/
 
 " Store undo files in one place.
 set undodir^=$HOME/.config/nvim/storage/undos//

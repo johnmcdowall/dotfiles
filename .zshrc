@@ -46,6 +46,9 @@ fpath=($fpath "/home/jmd/.zfunctions")
 source ~/.zshcustom/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+#autoload -U promptinit; promptinit
+#prompt spaceship
 
+fpath=($fpath "/home/jmd/.zfunctions")
+
+eval $(ssh-agent) > /dev/null
