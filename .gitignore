@@ -34,3 +34,5 @@ code/**
 .vim/.netrwhist
 .wget-hsts
 .node_repl_history
+*.log
+.guard_history
