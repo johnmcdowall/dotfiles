@@ -241,8 +241,9 @@ let g:rainbow_conf = {
 \   'ctermfgs': ['4', '3', '12', '8', '10', '5'],
 \}
 
-
-
+let g:neoformat_enabled_javascript = ['prettier', 'eslint']
+let g:prettier#autoformat = 0
+let g:prettier#config#config_precedence = 'file-override'
 
 augroup vimrcEx
   autocmd!
@@ -253,11 +254,16 @@ augroup vimrcEx
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile *.inky-erb set filetype=eruby
 
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+
+  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
+  autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
   " in makefiles, don't expand tabs to spaces, since actual tab characters are
   " needed, and have indentation at 8 chars to be sure that all indents are tabs
@@ -269,13 +275,20 @@ augroup vimrcEx
   au FileType ruby,javascript,css,scss,sass,html,erb autocmd BufWritePre <buffer> :%s/\s\+$//e
 
   " ALE linting events
-    set updatetime=4000
+    set updatetime=1000
     let g:ale_lint_on_text_changed = 0
     let g:ale_sign_error = '✗'
     let g:ale_sign_warning = '❱'
 
-    let g:ale_fixers = {
+    let g:ale_linters = {
           \   'javascript': ['prettier'],
+          \   'typescript': ['eslint'],
+          \   'ruby': ['rubocop'],
+          \}
+
+    let g:ale_fixers = {
+          \   'javascript': ['eslint'],
+          \   'typescript': ['eslint', 'prettier'],
           \   'ruby': ['rubocop'],
           \}
 
