@@ -38,3 +38,4 @@ code/**
 .guard_history
 .vim/autoload
 .config
+org/
