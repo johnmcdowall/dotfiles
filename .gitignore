@@ -39,3 +39,5 @@ code/**
 .vim/autoload
 .config
 org/
+.dbus
+.emacs.d
