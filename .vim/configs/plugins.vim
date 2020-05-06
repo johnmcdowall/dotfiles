@@ -30,7 +30,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 " coc extensions
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-solargraph']
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -53,17 +53,6 @@ Plug 'junegunn/fzf.vim'
 
 " Supertab
 Plug 'ervandew/supertab'
-
-" Deoplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-" Plug 'sbdchd/neoformat'
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'

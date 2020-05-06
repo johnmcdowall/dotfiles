@@ -194,7 +194,7 @@ highlight SpellBad ctermfg=001 ctermbg=007 guifg=#ff0000 guibg=#000000
 
 " Jump to the last known position when reopening a file.
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+  au BufReadPost * if &filetype != "gitcommit" && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
 

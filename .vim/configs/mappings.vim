@@ -63,9 +63,6 @@ nnoremap<silent> <S-Tab> :bprevious<CR>
 " Kill buffer with Space+bk
 nnoremap<silent> <Space>bk :bdelete<CR> 
 
-"Faster ESC.
-inoremap jk <ESC>
-inoremap kj <ESC>
 
 " Indent controls
 " Reselect text ater indent/unindent.
