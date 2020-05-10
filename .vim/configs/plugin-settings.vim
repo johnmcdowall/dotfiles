@@ -241,7 +241,6 @@ let g:rainbow_conf = {
 \   'ctermfgs': ['4', '3', '12', '8', '10', '5'],
 \}
 
-let g:neoformat_enabled_javascript = ['prettier', 'eslint']
 let g:prettier#autoformat = 0
 let g:prettier#config#config_precedence = 'file-override'
 
@@ -273,40 +272,15 @@ augroup vimrcEx
 
   " Remove trailing whitespace before saving a file
   au FileType ruby,javascript,css,scss,sass,html,erb autocmd BufWritePre <buffer> :%s/\s\+$//e
-
-  " ALE linting events
-    set updatetime=1000
-    let g:ale_lint_on_text_changed = 0
-    let g:ale_sign_error = '✗'
-    let g:ale_sign_warning = '❱'
-
-    let g:ale_linters = {
-          \   'javascript': ['prettier'],
-          \   'typescript': ['eslint'],
-          \   'ruby': ['rubocop'],
-          \}
-
-    let g:ale_fixers = {
-          \   'javascript': ['eslint'],
-          \   'typescript': ['eslint', 'prettier'],
-          \   'ruby': ['rubocop'],
-          \}
-
-    autocmd CursorHold * call ale#Queue(0)
-    autocmd CursorHoldI * call ale#Queue(0)
-    autocmd InsertEnter * call ale#Queue(0)
-    autocmd InsertLeave * call ale#Queue(0)
 augroup END
 
 
 " Fix visual selection
 set background=dark
 highlight Visual ctermbg=Blue ctermfg=White
-highlight ALEError ctermbg=none cterm=underline
-highlight ALEWarning ctermbg=none cterm=underline
 
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+" let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 
 

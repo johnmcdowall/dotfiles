@@ -62,12 +62,6 @@ Plug 'tpope/vim-rhubarb'
 " Nerd Commenter
 Plug 'scrooloose/nerdcommenter'
 
-" Code Snippets Engine
-Plug 'SirVer/ultisnips'
-
-" Snippets for ultisnips
-Plug 'honza/vim-snippets'
-
 " Vim Surround
 Plug 'tpope/vim-surround'
 
@@ -112,9 +106,6 @@ Plug 'junegunn/goyo.vim'
 
 " Rainbow parens
 Plug 'luochen1990/rainbow'
-
-" ALE
-Plug 'w0rp/ale'
 
 " Nord
 Plug 'arcticicestudio/nord-vim'
