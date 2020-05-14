@@ -52,7 +52,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Supertab
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'

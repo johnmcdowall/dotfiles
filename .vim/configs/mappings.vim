@@ -108,8 +108,8 @@ nnoremap  <Leader>gb  :Gbrowse<cr>
 
 " NERD Commenter
 " Toggle comments in visual or normal mode
-nnoremap <leader>n :call NERDComment(0,"toggle")<cr>
-vnoremap <leader>n :call NERDComment(1,"toggle")<cr>
+nnoremap <leader>n :call NERDComment(0,"toggle")<CR>
+vnoremap <leader>n :call NERDComment(1,"toggle")<CR>
 " Toggle a sexy comment
 nnoremap <leader>ns :call NERDComment(0,"sexy")<cr>
 vnoremap <leader>ns :call NERDComment(1,"sexy")<cr>
