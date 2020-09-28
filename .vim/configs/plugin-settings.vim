@@ -54,7 +54,7 @@ let g:nerdtreewinsize = 25
 let g:NERDTreeDirArrowExpandable = '▷'
 let g:NERDTreeDirArrowCollapsible = '▼'
 let NERDTreeAutoCenter=1
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
         \ "modified"  : "✹",
         \ "staged"    : "✚",
         \ "untracked" : "✭",
