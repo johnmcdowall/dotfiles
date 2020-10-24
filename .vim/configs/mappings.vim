@@ -119,26 +119,6 @@ nnoremap  <Leader>gM  :Gmerge<cr>
 nnoremap  <Leader>gb  :Gbrowse<cr>
 " browse current line on web
 
-" NERD Commenter
-" Toggle comments in visual or normal mode
-nnoremap <leader>n :call NERDComment(0,"toggle")<CR>
-vnoremap <leader>n :call NERDComment(1,"toggle")<CR>
-" Toggle a sexy comment
-nnoremap <leader>ns :call NERDComment(0,"sexy")<cr>
-vnoremap <leader>ns :call NERDComment(1,"sexy")<cr>
-" append a  comment
-nnoremap <leader>na :call NERDComment(0,"append")<cr>
-vnoremap <leader>na :call NERDComment(1,"append")<cr>
-" uncomment section
-nnoremap <leader>nu :call NERDComment(0,"uncomment")<cr>
-vnoremap <leader>nu :call NERDComment(1,"uncomment")<cr>
-" invert comments
-nnoremap <leader>ni :call NERDComment(0,"invert")<cr>
-vnoremap <leader>ni :call NERDComment(1,"invert")<cr>
-" comment section
-nnoremap <leader>nc :call NERDComment(0,"comment")<cr>
-vnoremap <leader>nc :call NERDComment(1,"comment")<cr>
-
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -166,13 +146,3 @@ else
 endif
 
 
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=yes
