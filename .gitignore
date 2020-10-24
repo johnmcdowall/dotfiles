@@ -41,3 +41,6 @@ code/**
 org/
 .dbus
 .emacs.d
+.oki
+.pki
+.azure
