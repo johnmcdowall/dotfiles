@@ -15,6 +15,27 @@ augroup specify_filetype
     autocmd!
     autocmd BufRead,BufNewFile *.md set filetype=markdown
     autocmd BufRead,BufNewFile *.txt set filetype=text
+
+    " Sometimes syntax highlighting can get out of sync in large JSX and TSX
+    " files. This was happening too often for me so I opted to enable syntax
+    " sync fromstart, which forces vim to rescan the entire buffer when
+    " highlighting. 
+    autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+    autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+    function! ShowDocIfNoDiagnostic(timer_id)
+      if (coc#util#has_float() == 0)
+        silent call CocActionAsync('doHover')
+      endif
+    endfunction
+
+    function! s:show_hover_doc()
+      call timer_start(500, 'ShowDocIfNoDiagnostic')
+    endfunction
+
+    autocmd CursorHoldI * :call <SID>show_hover_doc()
+    autocmd CursorHold * :call <SID>show_hover_doc()
+
 augroup END
 
 " Backspace deletes like most programs in insert mode

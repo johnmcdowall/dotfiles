@@ -10,6 +10,17 @@
 " Colorscheme
 colorscheme nord
 
+" CoC
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-solargraph']
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+        let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+        let g:coc_global_extensions += ['coc-eslint']
+endif
+
 """""""""""""""
 " Supertab    "
 """""""""""""""
@@ -241,9 +252,6 @@ let g:rainbow_conf = {
 \   'ctermfgs': ['4', '3', '12', '8', '10', '5'],
 \}
 
-let g:prettier#autoformat = 0
-let g:prettier#config#config_precedence = 'file-override'
-
 augroup vimrcEx
   autocmd!
   " When editing a file, always jump to the last known cursor position.
@@ -259,10 +267,6 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.inky-erb set filetype=eruby
 
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
-
-  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-
-  autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
   " in makefiles, don't expand tabs to spaces, since actual tab characters are
   " needed, and have indentation at 8 chars to be sure that all indents are tabs
