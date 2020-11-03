@@ -19,6 +19,9 @@ call plug#begin('~/.vimplugins')
 " coc for tslinting, auto complete and prettier
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
+" Language Packs
+" Plug 'sheerun/vim-polyglot'
+
 "------------------------ VIM TSX ------------------------
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
@@ -46,6 +49,9 @@ Plug 'tpope/vim-surround'
 " Auto pairs
 "Plug 'jiangmiao/auto-pairs'
 
+" Auto close tags
+Plug 'alvan/vim-closetag'
+
 " Multiple Cursors
 Plug 'terryma/vim-multiple-cursors'
 
@@ -57,9 +63,6 @@ Plug 'mhinz/vim-startify'
 
 " Vim Javascript
 Plug 'pangloss/vim-javascript'
-
-" Language Packs
-Plug 'sheerun/vim-polyglot'
 
 " Status bar
 Plug 'vim-airline/vim-airline'

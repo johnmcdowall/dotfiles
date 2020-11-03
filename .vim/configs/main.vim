@@ -24,7 +24,7 @@ augroup specify_filetype
     autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
     function! ShowDocIfNoDiagnostic(timer_id)
-      if (coc#util#has_float() == 0)
+      if (coc#float#has_float() == 0)
         silent call CocActionAsync('doHover')
       endif
     endfunction
