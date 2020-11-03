@@ -11,25 +11,20 @@
 colorscheme nord
 
 " CoC
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-solargraph']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-solargraph', 'coc-tailwindcss']
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-        let g:coc_global_extensions += ['coc-prettier']
+        "let g:coc_global_extensions += ['coc-prettier']
 endif
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-        let g:coc_global_extensions += ['coc-eslint']
+    let g:coc_global_extensions += ['coc-eslint']
 endif
 
 """""""""""""""
 " Supertab    "
 """""""""""""""
 let g:SuperTabDefaultCompletionType = "<c-n>"
-
-"""""""""""""""
-" Deoplete    "
-"""""""""""""""
-let g:deoplete#enable_at_startup = 1
 
 " Language server
 let g:LanguageClient_serverCommands = {
@@ -39,7 +34,6 @@ let g:LanguageClient_serverCommands = {
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.tsx,*.js"
 
-"""""""""""""""
 " Git Gutter  "
 """""""""""""""
 let g:gitgutter_enabled = 1
@@ -54,9 +48,6 @@ nmap <F6> :Goyo<CR>
 """"""""""""
 "NerdTree  "
 """"""""""""
-" if nerdtree is only window, kill nerdtree so buffer can die
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | :bdelete | endif
-
 map <Leader>, :NERDTreeToggle<CR>
 
 let nerdtreequitonopen = 0

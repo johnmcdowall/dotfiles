@@ -35,7 +35,9 @@ augroup specify_filetype
 
     autocmd CursorHoldI * :call <SID>show_hover_doc()
     autocmd CursorHold * :call <SID>show_hover_doc()
-
+    
+    " if nerdtree is only window, kill nerdtree so buffer can die
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | :bdelete | endif
 augroup END
 
 " Backspace deletes like most programs in insert mode
@@ -213,7 +215,7 @@ vmap <C-Left> <gvn
 set redrawtime=10000
 nnoremap U :syntax sync fromstart<cr>:redraw!<cr>
 
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.js,*.ejs"
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.js,*.ejs,*.tsx"
 let g:AutoPairsMultilineClose = 0
 let g:AutoPairsFlyMode = 0
 

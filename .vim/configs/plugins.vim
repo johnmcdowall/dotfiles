@@ -47,13 +47,13 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 
 " Auto pairs
-"Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " Auto close tags
 Plug 'alvan/vim-closetag'
 
 " Multiple Cursors
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 
 "" Indent guides
 Plug 'Yggdroot/indentLine'
