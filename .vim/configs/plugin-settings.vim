@@ -31,8 +31,13 @@ let g:LanguageClient_serverCommands = {
     \ 'ruby': ['~/.asdf/shims/solargraph', 'stdio'],
     \ }
 
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.ejs,*.jsx,*.tsx,*.js"
 
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.tsx,*.js"
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+let g:html_indent_tags = 'li\|p'
+let g:html_indent_inctags = "address,article,aside,audio,blockquote,canvas,dd,div,dl,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,main,nav,noscript,ol,output,p,pre,section,table,tfoot,ul,video,container,spacer,row,columns"
 
 " Git Gutter  "
 """""""""""""""
@@ -145,7 +150,6 @@ set completefunc=emoji#complete
 """""""""""""""""
 "Indent Guides  "
 """""""""""""""""
-"let g:indentLine_char = '▏'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 let g:indent_guides_auto_colors = 1
@@ -160,7 +164,8 @@ let g:indentLine_fileTypeExclude = [
 """""""""""""
 "Autopairs  "
 """""""""""""
-let g:AutoPairsFlyMode = 1
+let g:AutoPairsFlyMode = 0
+let g:AutoPairsMultilineClose = 0
 
 """""""""""""
 "Ultinsips  "

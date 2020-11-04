@@ -37,7 +37,25 @@ augroup specify_filetype
     autocmd CursorHold * :call <SID>show_hover_doc()
     
     " if nerdtree is only window, kill nerdtree so buffer can die
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | :bdelete | endif
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  
+    " Jump to the last known position when reopening a file.
+    au BufReadPost * if &filetype != "gitcommit" && line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+augroup END
+
+" Jump to the last known position when reopening a file.
+if has("autocmd")
+  au BufReadPost * if &filetype != "gitcommit" && line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
+
+" Relative line numbers
+set number
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
 " Backspace deletes like most programs in insert mode
@@ -166,13 +184,6 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
-let g:html_indent_tags = 'li\|p'
-let g:html_indent_inctags = "address,article,aside,audio,blockquote,canvas,dd,div,dl,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,main,nav,noscript,ol,output,p,pre,section,table,tfoot,ul,video,container,spacer,row,columns"
-
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
@@ -215,27 +226,9 @@ vmap <C-Left> <gvn
 set redrawtime=10000
 nnoremap U :syntax sync fromstart<cr>:redraw!<cr>
 
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.js,*.ejs,*.tsx"
-let g:AutoPairsMultilineClose = 0
-let g:AutoPairsFlyMode = 0
-
 " Spelling
 highlight clear SpellBad
 highlight SpellBad ctermfg=001 ctermbg=007 guifg=#ff0000 guibg=#000000
-
-" Jump to the last known position when reopening a file.
-if has("autocmd")
-  au BufReadPost * if &filetype != "gitcommit" && line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-endif
-
-" Relative line numbers
-set number
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
 
 let s:clip = '/mnt/c/Windows/System32/clip.exe' 
 if executable(s:clip)
