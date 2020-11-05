@@ -20,20 +20,14 @@ call plug#begin('~/.vimplugins')
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 " Language Packs
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 
-"------------------------ VIM TSX ------------------------
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'jparise/vim-graphql'
+" https://github.com/styled-components/vim-styled-components/issues/75
+Plug 'styled-components/vim-styled-components', { 'branch': 'develop' }
 
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-" Supertab
-" Plug 'ervandew/supertab'
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
@@ -60,9 +54,6 @@ Plug 'Yggdroot/indentLine'
 
 " Custom start page
 Plug 'mhinz/vim-startify'
-
-" Vim Javascript
-Plug 'pangloss/vim-javascript'
 
 " Status bar
 Plug 'vim-airline/vim-airline'

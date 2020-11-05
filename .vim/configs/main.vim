@@ -11,52 +11,8 @@
 let mapleader = "\<Space>"
 let maplocalleader = "\<Space>"
 
-augroup specify_filetype
-    autocmd!
-    autocmd BufRead,BufNewFile *.md set filetype=markdown
-    autocmd BufRead,BufNewFile *.txt set filetype=text
-
-    " Sometimes syntax highlighting can get out of sync in large JSX and TSX
-    " files. This was happening too often for me so I opted to enable syntax
-    " sync fromstart, which forces vim to rescan the entire buffer when
-    " highlighting. 
-    autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-    autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
-    function! ShowDocIfNoDiagnostic(timer_id)
-      if (coc#float#has_float() == 0)
-        silent call CocActionAsync('doHover')
-      endif
-    endfunction
-
-    function! s:show_hover_doc()
-      call timer_start(500, 'ShowDocIfNoDiagnostic')
-    endfunction
-
-    autocmd CursorHoldI * :call <SID>show_hover_doc()
-    autocmd CursorHold * :call <SID>show_hover_doc()
-    
-    " if nerdtree is only window, kill nerdtree so buffer can die
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  
-    " Jump to the last known position when reopening a file.
-    au BufReadPost * if &filetype != "gitcommit" && line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-augroup END
-
-" Jump to the last known position when reopening a file.
-if has("autocmd")
-  au BufReadPost * if &filetype != "gitcommit" && line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-endif
-
-" Relative line numbers
-set number
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
+" Regex engine?
+set re=0
 
 " Backspace deletes like most programs in insert mode
 set backspace=2
@@ -100,7 +56,7 @@ set softtabstop=2
 set shiftwidth=2
 set smarttab
 set autoindent
-set smartindent
+"set smartindent
 set shiftround
 
 " Enable syntax highlighting
@@ -111,12 +67,6 @@ set printoptions+=syntax:y
 
 " Matching braces/tags
 set showmatch
-
-" Keep a backup file.
-"set backup
-
-" Save undo tree.
-"set undofile
 
 " Do not back up temporary files.
 set backupskip=/tmp/*,/private/tmp/*"
@@ -238,3 +188,45 @@ if executable(s:clip)
   augroup END
 end
 
+augroup specify_filetype
+    autocmd!
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
+    autocmd BufRead,BufNewFile *.txt set filetype=text
+    autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
+    autocmd FileType typescript.tsx setlocal shiftwidth=2 tabstop=2
+
+    " Sometimes syntax highlighting can get out of sync in large JSX and TSX
+    " files. This was happening too often for me so I opted to enable syntax
+    " sync fromstart, which forces vim to rescan the entire buffer when
+    " highlighting. 
+    autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+    autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+    function! ShowDocIfNoDiagnostic(timer_id)
+      if (coc#float#has_float() == 0)
+        silent call CocActionAsync('doHover')
+      endif
+    endfunction
+
+    function! s:show_hover_doc()
+      call timer_start(500, 'ShowDocIfNoDiagnostic')
+    endfunction
+
+    autocmd CursorHoldI * :call <SID>show_hover_doc()
+    autocmd CursorHold * :call <SID>show_hover_doc()
+    
+    " if nerdtree is only window, kill nerdtree so buffer can die
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  
+    " Jump to the last known position when reopening a file.
+    au BufReadPost * if &filetype != "gitcommit" && line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+augroup END
+
+" Relative line numbers
+set number
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END

@@ -21,16 +21,12 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
     let g:coc_global_extensions += ['coc-eslint']
 endif
 
-"""""""""""""""
-" Supertab    "
-"""""""""""""""
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
 " Language server
 let g:LanguageClient_serverCommands = {
     \ 'ruby': ['~/.asdf/shims/solargraph', 'stdio'],
     \ }
 
+" Closetag config
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.ejs,*.jsx,*.tsx,*.js"
 
 " Treat <li> and <p> tags like the block tags they are
