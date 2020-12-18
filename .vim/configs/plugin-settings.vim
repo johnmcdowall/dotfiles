@@ -11,7 +11,7 @@
 colorscheme nord
 
 " CoC
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-solargraph', 'coc-tailwindcss']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-solargraph', 'coc-tailwindcss', 'coc-explorer']
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
     let g:coc_global_extensions += ['coc-prettier']
@@ -39,39 +39,6 @@ let g:html_indent_inctags = "address,article,aside,audio,blockquote,canvas,dd,di
 """""""""""""""
 let g:gitgutter_enabled = 1
 let g:gitgutter_grep=''
-
-
-"""""""""""
-" Goyo    "
-"""""""""""
-nmap <F6> :Goyo<CR>
-
-""""""""""""
-"NerdTree  "
-""""""""""""
-map <Leader>, :NERDTreeToggle<CR>
-
-let nerdtreequitonopen = 0
-let NERDTreeShowHidden=1
-let nerdchristmastree=1
-let g:NERDTreeMinimalUI = 1
-let g:nerdtreewinsize = 25
-let g:NERDTreeDirArrowExpandable = '▷'
-let g:NERDTreeDirArrowCollapsible = '▼'
-let NERDTreeAutoCenter=1
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-        \ "modified"  : "✹",
-        \ "staged"    : "✚",
-        \ "untracked" : "✭",
-        \ "renamed"   : "➜",
-        \ "unmerged"  : "═",
-        \ "deleted"   : "✖",
-        \ "dirty"     : "✗",
-        \ "clean"     : "✔︎",
-        \ 'ignored'   : '☒',
-        \ "unknown"   : "?"
-        \ }
-
 
 """"""""""""
 "Airline   "

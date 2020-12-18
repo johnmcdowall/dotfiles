@@ -30,23 +30,19 @@ nnoremap <silent> <space>s :<C-u>CocList -I symbols<cr>
 "" Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
 
+"""""""""""
+" Goyo    "
+"""""""""""
+nmap <F6> :Goyo<CR>
+
+""""""""""""""""
+" coc-explorer "
+""""""""""""""""
+map <Leader>, :CocCommand explorer<CR>
+
 " Pasting
 "map <silent> "=p :r !powershell.exe -Command Get-Clipboard<CR>"
 noremap <Leader>p :set paste<CR> :exe 'norm a'.system('/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -Command Get-Clipboard')<CR> :set nopaste<CR>
-
-autocmd FileType nerdtree let t:nerdtree_winnr = bufwinnr('%')
-autocmd BufWinEnter * call PreventBuffersInNERDTree()
-
-function! PreventBuffersInNERDTree()
-  if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree'
-    \ && exists('t:nerdtree_winnr') && bufwinnr('%') == t:nerdtree_winnr
-    \ && &buftype == '' && !exists('g:launching_fzf')
-    let bufnum = bufnr('%')
-    close
-    exe 'b ' . bufnum
-  endif
-  if exists('g:launching_fzf') | unlet g:launching_fzf | endif
-endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" fzf config

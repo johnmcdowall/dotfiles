@@ -8,8 +8,10 @@
 "***********************************************************************************
 
 " Set leader to space bar
-let mapleader = "\<Space>"
-let maplocalleader = "\<Space>"
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
 " Regex engine?
 set re=0

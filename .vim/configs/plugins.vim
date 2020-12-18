@@ -19,6 +19,9 @@ call plug#begin('~/.vimplugins')
 " coc for tslinting, auto complete and prettier
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
+" Show which keys do what
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+
 " Language Packs
 Plug 'sheerun/vim-polyglot'
 
@@ -64,11 +67,6 @@ Plug 'godlygeek/tabular'
 
 " Add DevIcons
 Plug 'ryanoasis/vim-devicons'
-
-" NERDTree
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Emoji support
 Plug 'junegunn/vim-emoji'
