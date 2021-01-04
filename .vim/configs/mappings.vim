@@ -141,4 +141,6 @@ else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+" Trigger Markdown preview
+nnoremap  <Leader>mp  :MarkdownPreview<cr>
 

@@ -80,4 +80,7 @@ Plug 'luochen1990/rainbow'
 " Nord
 Plug 'arcticicestudio/nord-vim'
 
+" Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'   }
+
 call plug#end()
