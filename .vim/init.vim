@@ -6,3 +6,6 @@ source $HOME/.vim/configs/plugins.vim
 source $HOME/.vim/configs/plugin-settings.vim
 " This script contains mappings
 source $HOME/.vim/configs/mappings.vim
+
+lua require('vimp')
+lua require('modules.statusline')

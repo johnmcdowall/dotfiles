@@ -16,6 +16,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vimplugins')
 
+" Writing nvim configs in lua
+Plug 'svermeulen/vimpeccable'
+
 " coc for tslinting, auto complete and prettier
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
@@ -58,10 +61,6 @@ Plug 'Yggdroot/indentLine'
 " Custom start page
 Plug 'mhinz/vim-startify'
 
-" Status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 " Tabular auto-align
 Plug 'godlygeek/tabular'
 
@@ -82,5 +81,8 @@ Plug 'arcticicestudio/nord-vim'
 
 " Markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'   }
+
+" Ayu
+Plug 'ayu-theme/ayu-vim'
 
 call plug#end()

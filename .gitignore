@@ -44,3 +44,7 @@ org/
 .oki
 .pki
 .azure
+.cdk/
+.helmbackup/
+.rnd/
+.rnd

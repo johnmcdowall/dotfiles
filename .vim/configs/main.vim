@@ -13,6 +13,9 @@ let g:maplocalleader = ','
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
+" Truecolor support
+set termguicolors
+
 " Regex engine?
 set re=0
 
