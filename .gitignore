@@ -48,3 +48,4 @@ org/
 .helmbackup/
 .rnd/
 .rnd
+.node-gyp/
