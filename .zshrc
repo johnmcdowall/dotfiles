@@ -1,3 +1,5 @@
+source ~/.zshcustom/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -43,7 +45,6 @@ _load_settings "$HOME/.zsh/configs"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fpath=($fpath "/home/jmd/.zfunctions")
 
-source ~/.zshcustom/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Set Spaceship ZSH as a prompt
 #autoload -U promptinit; promptinit
@@ -52,3 +53,9 @@ source ~/.zshcustom/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=($fpath "/home/jmd/.zfunctions")
 
 eval $(ssh-agent) > /dev/null
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/tmp/google-cloud-sdk/path.zsh.inc' ]; then . '/tmp/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/tmp/google-cloud-sdk/completion.zsh.inc'; fi
